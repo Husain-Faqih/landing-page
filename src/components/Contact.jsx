@@ -13,7 +13,7 @@ function Contact() {
           together.
         </p>
 
-        <a heref="mailto:obatherbal455@gmail.com" className="btn primary">
+        <a href="mailto:obatherbal455@gmail.com" className="btn primary">
           Get In Touch
         </a>
       </div>
