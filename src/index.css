@@ -34,6 +34,11 @@ a {
   z-index: 1000;
 }
 
+.navbar.scrolled {
+  background: rgba(13, 6, 6, 0.98);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
 .logo {
   font-size: 22px;
   font-weight: bold;
