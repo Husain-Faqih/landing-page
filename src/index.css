@@ -363,6 +363,86 @@ a {
   margin-bottom: 35px;
 }
 
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.whatsapp {
+  border: 1px solid #25d366;
+  background: transparent;
+  color: #25d366;
+  cursor: pointer;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.whatsapp:disabled,
+.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-submit-error {
+  margin-top: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #3a1a16;
+  border-radius: 8px;
+  background: #1c1010;
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff6a00;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-error {
+  margin-top: 7px;
+  color: #ff5a36;
+  font-size: 14px;
+}
+
+.form-success {
+  margin-top: 20px;
+  color: #ff8a00;
+  font-weight: bold;
+}
+
 .footer {
   padding: 40px 8%;
   display: flex;
@@ -443,6 +523,14 @@ a {
   .features {
     padding-left: 6%;
     padding-right: 6%;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-buttons .btn {
+    width: 100%;
   }
 
   .footer {
