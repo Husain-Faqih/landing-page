@@ -5,12 +5,12 @@ function Hero() {
         <p className="hero-subtitle">Welcome To My Website</p>
 
         <h1>
-          build Your <span>Digital Future.</span>
+          Build Your <span>Digital Future.</span>
         </h1>
 
         <p className="hero-description">
           Create modern, creative, and meaningful digital experiences with
-          technoligy an desingn.
+          technology and design.
         </p>
 
         <div className="hero-buttons">
@@ -19,9 +19,12 @@ function Hero() {
           </a>
 
           <a href="#about" className="btn secondary">
-            Learn more
+            Learn More
           </a>
         </div>
+      </div>
+      <div className="hero-image">
+        <img src="/hero.png" alt="Digitalillustration" />
       </div>
     </section>
   );

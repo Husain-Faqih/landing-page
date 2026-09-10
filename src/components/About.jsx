@@ -1,6 +1,9 @@
 function About() {
   return (
     <section className="about" id="about">
+      <div className="about-image">
+        <img src="/about.png" alt="About us illustration" />
+      </div>
       <div className="about-content">
         <p className="section-subtitle">ABOUT US</p>
 
