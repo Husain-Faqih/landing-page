@@ -30,9 +30,7 @@ function Contact() {
     setSuccess("");
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
+  function validateForm() {
     const newErrors = {};
 
     if (!form.name.trim()) {
@@ -41,13 +39,30 @@ function Contact() {
 
     if (!form.email.trim()) {
       newErrors.email = "Email harus diisi.";
-    } else if (!form.email.includes("@")) {
-      newErrors.email = "Email harus mengandung @.";
-    }
+    } else {
+      const emailParts = form.email.split("@");
 
-    if (!form.message.trim()) {
-      newErrors.message = "Pesan harus diisi.";
+      if (
+        emailParts.length !== 2 ||
+        !emailParts[0] ||
+        !emailParts[1] ||
+        !emailParts[1].includes(".")
+      ) {
+        newErrors.email = "Format email tidak valid.";
+      }
+
+      if (!form.message.trim()) {
+        newErrors.message = "Pesan harus diisi.";
+      }
+
+      return newErrors;
     }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const newErrors = validateForm();
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -98,6 +113,12 @@ Pesan:
 ${form.message}`;
 
   function handleWhatsApp() {
+    const newErrors = validateForm();
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       whatsappMessage,
     )}`;
