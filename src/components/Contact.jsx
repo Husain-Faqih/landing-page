@@ -50,13 +50,13 @@ function Contact() {
       ) {
         newErrors.email = "Format email tidak valid.";
       }
-
-      if (!form.message.trim()) {
-        newErrors.message = "Pesan harus diisi.";
-      }
-
-      return newErrors;
     }
+
+    if (!form.message.trim()) {
+      newErrors.message = "Pesan harus diisi.";
+    }
+
+    return newErrors;
   }
 
   async function handleSubmit(e) {
@@ -96,6 +96,7 @@ function Contact() {
       });
     } catch (error) {
       console.error("EmailJS Error:", error);
+
       setErrors({
         submit: "Pesan gagal dikirim. Silakan coba lagi.",
       });
@@ -119,6 +120,7 @@ ${form.message}`;
       setErrors(newErrors);
       return;
     }
+
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       whatsappMessage,
     )}`;
