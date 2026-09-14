@@ -60,15 +60,15 @@ function Contact() {
 
     try {
       await emailjs.send(
-        "service_lbzolh2",
-        "template_dskw929",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           name: form.name,
           email: form.email,
           message: form.message,
         },
         {
-          publicKey: "DBOtaLArtKelC_-Z-",
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         },
       );
 
